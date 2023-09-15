@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: sans-serif;
+    color:#090909;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.container {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 0;
+}
+
+.btn {
+    padding: 15px 25px;
+    background: transparent;
+    border: 1px solid #090909;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.rotating-hover-effect {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.rotating-hover-effect::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffd930;
+    z-index: -1;
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    transition: all .5s ease;
+}
+
+.rotating-hover-effect:hover::before{
+    transform: rotate(0);
+}
+
+
+.swipe-hover-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.swipe-hover-effect::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffd930;
+    z-index: -1;
+    transform: translateX(-101%);
+    transition: all .5s ease;
+}
+
+.swipe-hover-effect:hover::before{
+    transform: translateX(0);
+}
+
+
+.double-rotate-effect {
+    position: relative; 
+    color: #833442;
+    border-color: #833442;
+}
+
+.double-rotate-effect::before, .double-rotate-effect::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #833442;
+    transition: all .5s ease-out;
+    z-index: -1;
+}
+
+.double-rotate-effect::before {
+    transform: rotateX(90deg);
+}
+
+.double-rotate-effect::after {
+    transform: rotateY(90deg);
+}
+
+.double-rotate-effect:hover {
+    color: #ffffff;
+}
+
+.double-rotate-effect:hover::before {
+    transform: rotateX(0);
+}
+
+.double-rotate-effect:hover::after {
+    transform: rotateY(0);
+}
+
+.light-reflect-effect {
+    position: relative;
+    background-color: #bf7180;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.light-reflect-effect::before {
+    position: absolute;
+    content: '';
+    top:0;
+    left:0;
+    width: 100%;
+    height: 20px;
+    background-color: #ffffff;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all .4s ease-in-out;
+}
+
+.light-reflect-effect:hover {
+    background-color: #f5c5ce;
+}
+
+.light-reflect-effect:hover::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+.two-layers-effect {
+    background-color: #090909;
+    position: relative;
+    overflow: hidden;
+}
+
+.two-layers-effect::before {
+    position: absolute;
+    content: 'Two layers effect';
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffd930;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-100%, 100%);
+}
+
+.two-layers-effect::after {
+    position: absolute;
+    content: 'Two layers effect';
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffd930;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+}
+
+.two-layers-effect:hover::before {
+    transform: translate(0, 0);
+}
+
+.two-layers-effect:hover::after {
+    transform: translate(100%, -100%);
+}
+
+.two-layers-effect::before,
+.two-layers-effect::after {
+    transition: all .5s;
+}
+
+.text-scaling-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-scaling-effect::before {
+    position: absolute;
+    content: 'Text scaling effect';
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #090909;
+    color:#ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+.text-scaling-effect:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.circular-swapping-effect {
+    position: relative;
+    color:#bf7180;
+    border-color: #bf7180;
+    overflow: hidden;
+
+}
+
+.circular-swapping-effect::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #bf7180;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+    transition: all .5s;
+}
+
+.circular-swapping-effect:hover {
+    color:#f2f2f2;
+}
+
+.circular-swapping-effect:hover::before {
+    height: 190%;
+}
+
+
+
+
