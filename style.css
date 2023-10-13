@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: sans-serif;
-    color:#090909;
+    font-family: sans-serif;
+    color: #090909;
 }
 
 body {
@@ -22,6 +22,7 @@ body {
     padding: 15px 25px;
     background: transparent;
     border: 1px solid #090909;
+    font-size: 14px;
 }
 
 .btn:hover {
@@ -48,7 +49,7 @@ body {
     transition: all .5s ease;
 }
 
-.rotating-hover-effect:hover::before{
+.rotating-hover-effect:hover::before {
     transform: rotate(0);
 }
 
@@ -71,18 +72,19 @@ body {
     transition: all .5s ease;
 }
 
-.swipe-hover-effect:hover::before{
+.swipe-hover-effect:hover::before {
     transform: translateX(0);
 }
 
 
 .double-rotate-effect {
-    position: relative; 
+    position: relative;
     color: #833442;
     border-color: #833442;
 }
 
-.double-rotate-effect::before, .double-rotate-effect::after {
+.double-rotate-effect::before,
+.double-rotate-effect::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -124,8 +126,8 @@ body {
 .light-reflect-effect::before {
     position: absolute;
     content: '';
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 20px;
     background-color: #ffffff;
@@ -151,7 +153,7 @@ body {
     position: absolute;
     content: 'Two layers effect';
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #ffd930;
@@ -165,7 +167,7 @@ body {
     position: absolute;
     content: 'Two layers effect';
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #ffd930;
@@ -197,11 +199,11 @@ body {
     position: absolute;
     content: 'Text scaling effect';
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #090909;
-    color:#ffffff;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,7 +219,7 @@ body {
 
 .circular-swapping-effect {
     position: relative;
-    color:#bf7180;
+    color: #bf7180;
     border-color: #bf7180;
     overflow: hidden;
 
@@ -237,7 +239,7 @@ body {
 }
 
 .circular-swapping-effect:hover {
-    color:#f2f2f2;
+    color: #f2f2f2;
 }
 
 .circular-swapping-effect:hover::before {
@@ -245,5 +247,81 @@ body {
 }
 
 
+.rotating-layers-effect {
+    position: relative;
+    background-color: #f5c5ce;
+}
 
+.rotating-layers-effect::after,
+.rotating-layers-effect::before {
+    position: absolute;
+    content: 'Rotating layers effect';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: rotateX(270deg);
+    transform-origin: top;
+    transition: all 0.5s;
+}
 
+.rotating-layers-effect::after {
+    background-color: #bf7180;
+    z-index: 1;
+
+}
+
+.rotating-layers-effect::before {
+    background-color: #8871bf;
+    transition-delay: 0.25s;
+    z-index: 2;
+}
+
+.rotating-layers-effect:hover::after,
+.rotating-layers-effect:hover::before {
+    transform: rotateX(0deg);
+}
+
+.three-circles-effect {
+    border: none;
+    position: relative;
+    font-weight: 700;
+    color: #8871bf;
+}
+
+.three-circles-effect::before,
+.three-circles-effect::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #8871bf;
+    transform: translateY(-50%);
+}
+
+.three-circles-effect::before {
+    left: 0;
+    box-shadow: -100px 0 0 #8871bf;
+}
+
+.three-circles-effect::after {
+    right: 0;
+    box-shadow: 100px 0 0 #8871bf;
+}
+
+.three-circles-effect:hover::before {
+    left: 50%;
+    box-shadow: 30px 0 0 #8871bf;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.three-circles-effect:hover::after {
+    right: 50%;
+    box-shadow: -30px 0 0 #8871bf;
+    transform: translateY(-50%) translateX(50%);
+}
